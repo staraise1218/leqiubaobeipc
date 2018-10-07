@@ -1,0 +1,46 @@
+.music_bg{
+	background: url(../images/music/music_bg.png) no-repeat;
+	background-size: cover;
+	padding: 4% 0 6% 0;
+	position: relative;
+	box-sizing: content-box;
+}
+
+.w100{
+	width: 100%;
+}
+
+/*视频弹窗*/
+.music_title{
+	font-size: 100px;
+	display: inline-block;
+	border: 15px dotted #fff;
+    padding: 5px 50px;
+}
+
+.pro_video{
+	margin: 10% 20% 0 20%;
+}
+
+.pro_video video{
+	width: 100%;
+}
+
+.music_video{
+	position: relative;
+	z-index: 9
+}
+
+.music_video_img{
+	position: absolute;
+	top: 34%;
+    left: 25%;
+    width: 45%;
+}
+
+.music_video_start{
+	position: absolute;
+	top: 47%;
+	left: 45%;
+	z-index: 9;
+}

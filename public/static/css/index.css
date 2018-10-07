@@ -1,0 +1,44 @@
+/*中间按钮*/
+.index_bg{
+	background: url(../images/index/index_bg.png) no-repeat;
+	background-size: cover;
+	min-width: 1200px;
+    padding: 30% 0 50% 0;
+    position: relative;
+}
+
+.index_all{
+    width: 55%;
+    margin: 0 auto;
+    padding: 60px 60px 40px 60px;
+	background: url(../images/index/index_border.png) no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btn_l_b{
+	display: flex;
+}
+
+.my50{
+	width: 50%;
+}
+.my100{
+	width: 100%;
+}
+
+/*youce小时间*/
+.index_date{
+	width: 16%;
+	padding: 20px 0;
+	background: url(../images/index/index_date.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+    top: 24%;
+    right: 0;
+    font-size: 46px;
+    color: #11494c;
+}

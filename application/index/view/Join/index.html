@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>合作加盟</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/join.css">
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- 顶部导航菜单 -->
+	{include file="common/header"}
+	<!-- 公司介绍 -->
+	<div class="join_bg">
+		<div class="join_text join_intor">
+			<img class="w100" src="/static/images/company/com_text.png">
+			<div class="join_text_p ac">
+				{$info.content}
+			</div>
+		</div>
+		<div class="join_map_title">公司位置</div>
+		<div class="join_bor ac">
+			<img class="join_map" src="/static/images/join/map.png">
+		</div>
+	</div>
+	<!-- 下方广告 -->
+	{include file="common/footer"}
+
+</body>
+</html>
