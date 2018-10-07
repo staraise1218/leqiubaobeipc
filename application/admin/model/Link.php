@@ -21,7 +21,10 @@ class Link extends Model
 
     ];
     
-
+    public function category()
+    {
+        return $this->belongsTo('category', 'category_id', 'id', [], 'left')->setEagerlyType(0);;
+    }
     
 
 

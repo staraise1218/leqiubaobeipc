@@ -20,7 +20,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             table.bootstrapTable({
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
                 pk: 'id',
-                sortName: 'id',
+                sortName: 'link.id',
                 search: false,
                 showToggle: false,
                 showColumns: false,
@@ -30,7 +30,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'category_id', title: __('Category_id')},
+                        {field: 'category.name', title: __('Category_id')},
                         {field: 'title', title: __('Title')},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'image', title: __('Image'), formatter: Table.api.formatter.image},
