@@ -21,17 +21,9 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Audiofile')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">跳转链接:</label>
         <div class="col-xs-12 col-sm-8">
-            <div class="input-group">
-                <input id="c-audiofile" data-rule="required" class="form-control form-control" size="50" name="row[audiofile]" type="text">
-                <div class="input-group-addon no-border no-padding">
-                    <span><button type="button" id="plupload-audiofile" class="btn btn-danger plupload" data-input-id="c-audiofile" data-multiple="false"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
-                    <span><button type="button" id="fachoose-audiofile" class="btn btn-primary fachoose" data-input-id="c-audiofile" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
-                </div>
-                <span class="msg-box n-right" for="c-audiofile"></span>
-            </div>
-            
+            <input id="c-url" data-rule="required" class="form-control form-control" name="row[url]" type="text">
         </div>
     </div>
     <div class="form-group">

@@ -99,17 +99,19 @@
 		</div>
 
 		<!-- 合作公司 -->
-		<ul class="pro_bottom">
-			<li class="jiantou"><img src="/static/images/product/pro_l.png"></li>
-			{foreach name="audio" item="item" key="k"}
-			<li>
-				<img class="pro_bottom_bor" src="/static/images/product/pro_1.png">
-				<img class="pro_bottom_img" class="" src="{$item.thumbimage}">
-				<img class="pro_bottom_start" src="/static/images/product/start.png">
-			</li>
-			{/foreach}
-			<li class="jiantou"><img src="/static/images/product/pro_r.png"></li>
-		</ul>
+		<div class="pro_com">
+			<div class="jiantou prev"><img src="/static/images/product/pro_l.png"></div>
+			<ul class="pro_bottom" id="scroll">
+				{foreach name="audio" item="item" key="k"}
+				<li>
+					<img class="pro_bottom_bor" src="/static/images/product/pro_1.png">
+					<img class="pro_bottom_img" class="" src="{$item.thumbimage}">
+					<img class="pro_bottom_start" src="/static/images/product/start.png">
+				</li>
+				{/foreach}
+			</ul>
+			<div class="jiantou next"><img src="/static/images/product/pro_r.png"></div>
+		</div>
 	</div>
 	<!-- 下方广告 -->
 	{include file="common/footer"}

@@ -169,18 +169,28 @@
 }
 
 /*下方合作公司*/
-.pro_bottom{
-	width: 100%;
+.pro_com{
 	display: flex;
 	margin-top: 17.5%;
-	justify-content:space-around;
 	align-items: center;
 }
 
-.pro_bottom li:not(.jiantou){
-	width: 25%;
+.pro_bottom{
+	width: 100%;
+    display: inline;
+    white-space: nowrap;/*规定段落中的文本不进行换行*/
+    overflow-x:scroll;/*水平方向，超出部分添加滚动机制*/
+    float:left;/*一定要设置左侧浮动*/
+    overflow-y:hidden/*竖直方向，超出部分隐藏*/
+}
+
+.pro_bottom li{
+	width: 26.6%;
+	margin: 0 3%;
 	text-align: center;
 	position: relative;
+    display:inline-block;
+	margin-bottom: 10px;
 }
 
 .pro_bottom_bor{
@@ -188,19 +198,11 @@
 }
 
 .pro_bottom_img{
-	width: 70%;
+	width: 88%;
 	position: absolute;
 	bottom: 20%;
+	left: 6%;
 	border-radius: 10px;
-}
-.pro_bottom_imgl{
-	left: 11%;
-}
-.pro_bottom_imgm{
-	left: 5%;
-}
-.pro_bottom_imgr{
-	right: 10%;
 }
 
 .pro_bottom_start{
@@ -209,7 +211,23 @@
 	left: 40%;
 	bottom: 40%;
 }
-
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+.pro_bottom::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background-color: #F5F5F5;
+}
+ 
+/*定义滚动条轨道 内阴影+圆角*/
+.pro_bottom::-webkit-scrollbar-track{
+    background-color: #11494c;
+}
+ 
+/*定义滑块 内阴影+圆角*/
+.pro_bottom::-webkit-scrollbar-thumb{
+	border-radius: 5px;
+    background-color: rgba(0,0,0,.1);
+}
 /*视频弹窗*/
 .pro_video{
 	margin: 10% 20% 0 20%;
