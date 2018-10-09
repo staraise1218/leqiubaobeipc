@@ -31,6 +31,6 @@ return array (
   'mail_smtp_pass' => 'password',
   'mail_verify_type' => '2',
   'mail_from' => '10000@qq.com',
-  'about_video1' => '',
-  'about_video2' => '',
+  'about_video1' => '/uploads/20180928/e634b09d445b1f712b8b947c142a62af.mp4',
+  'about_video2' => '/uploads/20180928/e634b09d445b1f712b8b947c142a62af.mp4',
 );

@@ -50,34 +50,23 @@
 				<div class="pro_show ac">
 					<p class="pro_show_title">乐球宝贝公司介绍</p>
 					{if condition="!empty($productVideo0.videofile)"}
-					<img class="pro_show_start" src="/static/images/product/start.png" data-toggle="modal" data-target="#myVideo1">
+					<img class="pro_show_start playvideo" src="/static/images/product/start.png" data-url="{$productVideo0.videofile}">
 					{/if}
 					<img class="pro_show_img" src="{$productVideo0.thumbimage}">
 					<img class="pro_show_bor" src="/static/images/product/pro_img.png">
 					<p class="pro_show_p al">{$productVideo0.description}</p>
 				</div>
-				<!-- 视频弹窗 -->
-				<div class="modal fade" id="myVideo1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="min-width: 1200px;">
-					<div class="pro_video">
-						<video src="{$productVideo0.videofile}" controls="controls"></video>
-					</div>
-				</div>
+
 				<div class="pro_intro pro_show ac">
 					<p class="pro_show_title">公司产品介绍</p>
 					{if condition="!empty($productVideo1.videofile)"}
-					<img class="pro_intro_start" src="/static/images/product/start.png" data-toggle="modal" data-target="#myVideo2">
+					<img class="pro_intro_start playvideo" src="/static/images/product/start.png" data-url="{$productVideo1.videofile}">
 					{/if}
 					<img class="pro_intro_img" src="{$productVideo1.thumbimage}">
 					<img class="pro_intro_bor pro_show_bor" src="/static/images/product/pro_intro.png">
 					<p class="pro_intro_p pro_show_p al">{$productVideo1.description}</p>
 				</div>
 				<img class="pro_music" src="/static/images/product/pro_music.png">
-				<!-- 视频弹窗 -->
-				<div class="modal fade" id="myVideo2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="min-width: 1200px;">
-					<div class="pro_video">
-						<video src="{$productVideo1.videofile}" controls="controls"></video>
-					</div>
-				</div>
 			</div>
 			<!-- 排行榜 -->
 			<div class="pro_r">
@@ -115,6 +104,23 @@
 	</div>
 	<!-- 下方广告 -->
 	{include file="common/footer"}
+<script type="text/javascript" src="/static/layer/layer.js"></script>
+<script type="text/javascript">
+	//弹出一个页面层
+ 	$('.playvideo').on('click', function(){
+		var videoUrl = $(this).attr('data-url');
 
+		var html = '<video id="video" src="'+videoUrl+'" width="600" height="360" controls preload autoplay></video>';
+		layer.open({
+			type: 1,
+			skin: 'layui-layer-rim', //加上边框
+			area: ['620px', '400px'], //宽高
+			title: false,
+			closeBtn: 0,
+  			shadeClose: true,
+			content: html,
+		});	
+ 	});
+</script>
 </body>
 </html>
