@@ -20,17 +20,28 @@
 		<div class="music_intor">
 			<img class="music_video w100" src="/static/images/music/music_video.png">
 			<img class="music_video_img" src="{$info.thumbimage}">
-			<img class="music_video_start" src="/static/images/company/com_start.png" data-toggle="modal" data-target="#myVideo1">
-			<!-- 视频弹窗 -->
-			<div class="modal fade" id="myVideo1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="min-width: 1200px;">
-				<div class="pro_video">
-					<video src="{$info.file}" controls="controls"></video>
-				</div>
-			</div>
+			<img class="music_video_start playvideo" src="/static/images/company/com_start.png" data-url="{$info.file}">
 		</div>
 	</div>
 	<!-- 下方广告 -->
 	{include file="common/footer"}
+<script type="text/javascript" src="/static/layer/layer.js"></script>
+<script type="text/javascript">
+	//弹出一个页面层
+ 	$('.playvideo').on('click', function(){
+		var videoUrl = $(this).attr('data-url');
 
+		var html = '<video id="video" src="'+videoUrl+'" width="600" height="360" controls preload autoplay></video>';
+		layer.open({
+			type: 1,
+			skin: 'layui-layer-rim', //加上边框
+			area: ['620px', '400px'], //宽高
+			title: false,
+			closeBtn: 0,
+  			shadeClose: true,
+			content: html,
+		});	
+ 	});
+</script>
 </body>
 </html>
