@@ -26,11 +26,11 @@ class About extends Frontend
         // 团队
         $teamlist = Db::name('team')
             ->order('id desc')
-            ->select(2);
+            ->limit(2)
+            ->select();
 
-
-        // 团队
-        $link = Db::name('link')
+        // 合作与赞助
+        $hezuo = Db::name('link')
             ->where('category_id', 5)
             ->order('id desc')
             ->limit(6)
@@ -38,7 +38,7 @@ class About extends Frontend
 
         $this->assign('info', $info);
         $this->assign('teamlist', $teamlist);
-        $this->assign('link', $link);
+        $this->assign('hezuo', $hezuo);
         return $this->view->fetch();
     }
 

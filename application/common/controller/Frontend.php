@@ -7,6 +7,7 @@ use think\Config;
 use think\Controller;
 use think\Hook;
 use think\Lang;
+use think\Db;
 
 /**
  * 前台控制器基类
@@ -106,6 +107,14 @@ class Frontend extends Controller
         $config = array_merge($config, Config::get("view_replace_str"));
 
         Config::set('upload', array_merge(Config::get('upload'), $upload));
+
+         // 合作伙伴
+        $link = Db::name('link')
+            ->where('category_id', 4)
+            ->order('id desc')
+            ->limit(2)
+            ->select();
+        $this->assign('link', $link);
 
         // 配置信息后
         Hook::listen("config_init", $config);
