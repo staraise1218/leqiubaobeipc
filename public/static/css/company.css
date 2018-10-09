@@ -160,18 +160,9 @@
 }
 
 .com_bottom_img{
-	width: 70%;
+	width: 90%;
 	position: absolute;
-	top: 8.5%;
+	top: 7%;
+	left: 5%;
 	border-radius: 10px;
-}
-
-.com_bottom_imgl{
-	left: 5%;
-}
-.com_bottom_imgm{
-	left: 5%;
-}
-.com_bottom_imgr{
-	left: 10.5%;
 }
