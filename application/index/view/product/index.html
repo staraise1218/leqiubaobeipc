@@ -74,7 +74,7 @@
 				<ul class="pro_r_ul">
 					{foreach name="audio" item="item" key="k"}
 					<li>
-						<a href="#">
+						<a href="{$item.url}" target="_blank">
 							<img src="/static/images/product/top{$k+1}.png">
 							<p>
 								<span>{$item.title}</span>
@@ -87,15 +87,15 @@
 			</div>
 		</div>
 
-		<!-- 合作公司 -->
+		<!-- 音频专区 -->
 		<div class="pro_com">
 			<div class="jiantou prev"><img src="/static/images/product/pro_l.png"></div>
 			<ul class="pro_bottom" id="scroll">
 				{foreach name="audio" item="item" key="k"}
 				<li>
 					<img class="pro_bottom_bor" src="/static/images/product/pro_2.png">
-					<img class="pro_bottom_img" class="" src="{$item.thumbimage}">
-					<img class="pro_bottom_start" src="/static/images/product/start.png">
+					<a href="{$item.url}" target="_blank"><img class="pro_bottom_img" class="" src="{$item.thumbimage}"></a>
+					<a href="{$item.url}" target="_blank"><img class="pro_bottom_start" src="/static/images/product/start.png"></a>
 				</li>
 				{/foreach}
 			</ul>
