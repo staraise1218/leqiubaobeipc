@@ -1,0 +1,25 @@
+<div id="myCarousel" class="carousel slide">
+	<!-- 轮播（Carousel）指标 -->
+	<ol class="carousel-indicators">
+		{foreach name="banner" item="item" key="k"}
+		<li data-target="#myCarousel" data-slide-to="{$k}" {if condition="$k == 0"}class="active"{/if}></li>
+		{/foreach}
+		<!-- <li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li> -->
+	</ol>   
+	<!-- 轮播（Carousel）项目 -->
+	<div class="pro_pic carousel-inner">
+		{foreach name="banner" item="item" key="k"}
+		<div class="pro_pic_item item {if condition="$k == 0"}active{/if}">
+			<img src="{$item.image}" alt="{$item.title}">
+		</div>
+		{/foreach}
+	</div>
+	<!-- 轮播（Carousel）导航 -->
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="sr-only">Next</span>
+	</a>
+</div>

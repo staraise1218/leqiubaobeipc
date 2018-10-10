@@ -115,7 +115,12 @@ class Frontend extends Controller
             ->limit(2)
             ->select();
         $this->assign('link', $link);
-
+        // 轮播图
+        $banner = Db::name('ad')
+            ->where('ad_position_id', 2)
+            ->order('id desc')
+            ->select();
+        $this->assign('banner', $banner);
         // 配置信息后
         Hook::listen("config_init", $config);
         // 加载当前控制器语言包
