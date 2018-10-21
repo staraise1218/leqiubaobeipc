@@ -1,28 +1,30 @@
-/*中间按钮*/
 .index_bg{
 	background: url(../images/index/index_bg.png) no-repeat;
-	background-size: cover;
+	background-size: 100%;
 	min-width: 1200px;
-    padding: 30% 0 50% 0;
+    padding: 21% 0 16% 0;
     position: relative;
+	box-sizing: content-box;
 }
-
+/*中间按钮*/
 .index_all{
-    width: 55%;
+    width: 67%;
     margin: 0 auto;
-    padding: 60px 60px 40px 60px;
+    padding: 55px 65px 40px 65px;
 	background: url(../images/index/index_border.png) no-repeat;
 	background-size: 100% 100%;
 	background-position: center;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	/*align-items: center;*/
 }
 
 .btn_l_b{
 	display: flex;
 }
-
+.btn_l_b a{
+	margin: 0 10px;
+}
 .my50{
 	width: 50%;
 }
@@ -33,12 +35,14 @@
 /*youce小时间*/
 .index_date{
 	width: 16%;
-	padding: 20px 0;
-	background: url(../images/index/index_date.png) no-repeat;
+	padding: 35px 0;
+	background-image: url(../images/index/index_date.png);
+	background-repeat:  no-repeat;
 	background-size: 100% 100%;
 	position: absolute;
-    top: 24%;
+    top: 20.5%;
     right: 0;
     font-size: 46px;
-    color: #11494c;
+    /*color: #11494c;*/
+    color: #fff;
 }
