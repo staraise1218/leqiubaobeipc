@@ -82,7 +82,7 @@ footer{
 	height: 250px;
 	background-color: rgba(0,0,0,.5);
 	position: absolute;
-	z-index: 99;
+	z-index: -1;
 }
 
 .bottom_l{
@@ -92,4 +92,20 @@ footer{
 
 .bottom_l p span{
 	margin-left: 40px;
+}
+
+.bottom_m{
+	display: flex;
+}
+
+.bottom_m_div{
+	width: 28%;
+}
+
+.bottom_m_div img{
+	width: 90%;
+}
+
+.bottom_m_div p{
+	margin-top: 10px;
 }
