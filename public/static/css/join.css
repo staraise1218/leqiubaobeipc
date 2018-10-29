@@ -31,13 +31,13 @@
 
 .join_bor{
 	background: url(../images/join/join_bor.png) no-repeat center 0;
+	background-size: 55% 100%;
 	width: 100%;
-	height: 900px;
 	padding: 0 20%;
 }
 
 .join_map{
-	margin-top: 7%;
+	margin: 4% 0;
 	width: 76%;
 }
 
