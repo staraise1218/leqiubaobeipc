@@ -17,6 +17,11 @@
 
 .join_text{
 	padding: 0 14%;
+	text-align: center;
+}
+
+.join_text img{
+	width: 80%;
 }
 
 .join_text_p{
