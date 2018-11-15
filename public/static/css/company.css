@@ -31,6 +31,7 @@
 	position: relative;
 }
 
+
 .com_video{
 	position: relative;
 	z-index: 9
@@ -39,19 +40,24 @@
 .com_video_img{
 	position: absolute;
 	top: 17.5%;
-	left: 16%;
-	width: 68%;
+	left: 25%;
+	width: 50%;
 }
 
 .com_video_start{
 	position: absolute;
 	top: 40%;
-	left: 45%;
+	left: 46%;
 	z-index: 9;
 }
 
 .com_text{
+	text-align: center;
 	padding: 5% 14%;
+}
+
+.com_text img{
+	width: 80%;
 }
 
 .com_text_p{
@@ -61,7 +67,8 @@
 	position: absolute;
 	top: 50%;
 	left: 0;
-	padding: 0 18% 0 20%;
+	/*padding: 0 18% 0 20%;*/
+	padding: 0 25%;
 }
 
 .com_pro{
@@ -70,13 +77,13 @@
 
 .com_pro_img{
 	position: absolute;
-	top: 18%;
-	left: 15%;
-	width: 70%;
+	top: 20%;
+	left: 17%;
+	width: 58%;
 }
 
 .com_team{
-	margin-top: 24.1%;
+	margin-top: 18.5%;
 }
 
 .com_dia{
@@ -124,7 +131,7 @@
 
 .com_join{
 	margin-top: 28.5%;
-	margin-left: -1.5%;
+    margin-left: -1.6%;
 }
 
 .com_join_img{
@@ -142,9 +149,9 @@
 /*下方合作公司*/
 .com_bottom{
 	width: 100%;
-	padding: 0 11%;
+	padding: 0 14.5% 0 14%;
 	display: flex;
-	margin-bottom: 13.8%;
+	margin-bottom: 14.7%;
 	justify-content:space-around;
 	align-items: center;
 }
