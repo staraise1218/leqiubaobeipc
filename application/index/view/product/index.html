@@ -9,6 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/common.css">
 	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/static/css/swiper.min.css">
+	<script src="/static/js/swiper.min.js"></script>
 </head>
 <body>
 	<!-- 顶部导航菜单 -->
@@ -61,19 +63,21 @@
 			</div>
 		</div>
 
-		<!-- 音频专区 -->
+		<!-- 合作公司 -->
 		<div class="pro_com">
-			<div class="jiantou prev"><img src="/static/images/product/pro_l.png"></div>
-			<ul class="pro_bottom" id="scroll">
-				{foreach name="audio" item="item" key="k"}
-				<li>
-					<img class="pro_bottom_bor" src="/static/images/product/pro_2.png">
-					<a href="{$item.url}" target="_blank"><img class="pro_bottom_img" class="" src="{$item.thumbimage}"></a>
-					<a href="{$item.url}" target="_blank"><img class="pro_bottom_start" src="/static/images/product/start.png"></a>
-				</li>
-				{/foreach}
-			</ul>
-			<div class="jiantou next"><img src="/static/images/product/pro_r.png"></div>
+			<div class="jiantou prev" role="button" aria-label="Next slide" aria-disabled="false"><img src="/static/images/product/pro_l.png"></div>
+			<div class="scroll_content swiper-container swiper-container-horizontal">
+				<ul class="pro_bottom swiper-wrapper" style="height: auto;">
+					{foreach name="audio" item="item" key="k"}
+					<li class="swiper-slide swiper-slide-active">
+						<img class="pro_bottom_bor" src="/static/images/product/pro_2.png">
+						<a href="{$item.url}"><img class="pro_bottom_img" src="{$item.thumbimage}"></a>
+						<img class="pro_bottom_start" src="/static/images/product/start.png">
+					</li>
+					{/foreach}
+				</ul>
+			</div>
+			<div class="jiantou next" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"><img src="/static/images/product/pro_r.png"></div>
 		</div>
 	</div>
 	<!-- 下方广告 -->
@@ -95,6 +99,19 @@
 			content: html,
 		});	
  	});
+
+ 	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 3,
+		spaceBetween: 0,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.next',
+			prevEl: '.prev',
+		},
+	});
 </script>
 </body>
 </html>
