@@ -26,8 +26,11 @@
                     <a class="dib my100" href="{:url('index/join/index')}"><img class="my100 divbanner" src="static/images/index/hezuo.png"></a>
                 </div>
             </div>
-            <div class="btn_l my50">
+            <div class="btn_l my50 index_music">
                 <a href="{:url('index/music/index')}"><img class="my100 divbanner" src="static/images/index/xiha.png"></a>
+                {foreach name="$audiolist" item="item" key="k"}
+                <p class="music_top top{$k+1}"><a target="_blank" href="{$item.url}">{$item.title}</a></p>
+                {/foreach}
             </div>
         </div>
         <!-- 右侧小时间 -->
@@ -73,6 +76,15 @@
             }else{
                 imageIndex=0
             }
+
+            // 字体变化
+            $('.music_top').each(function(index){
+                if($(this).hasClass('offset')){
+                    $(this).removeClass('offset');
+                } else {
+                    $(this).addClass('offset');
+                }
+            })
         }
         setInterval("changeBg()", 500);
         
