@@ -38,10 +38,14 @@
 }
 
 .com_video_img{
-	position: absolute;
+	/*position: absolute;
 	top: 17.5%;
 	left: 25%;
-	width: 50%;
+	width: 50%;*/
+	position: absolute;
+    top: 19.5%;
+    left: 27%;
+    width: 48%;
 }
 
 .com_video_start{
