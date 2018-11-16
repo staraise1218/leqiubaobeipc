@@ -21,9 +21,11 @@
 		</div>
 		<div class="com_intor" style="margin-top: 7%;">
 			<img class="com_video w100" src="/static/images/company/com_video.png">
-			<img class="com_video_img" src="{$site.about_video_thumb1}">
-			<img class="com_video_start playvideo" src="/static/images/company/com_start.png" data-url="{$site.about_video1}">
-
+			<!-- <img class="com_video_img" src="{$site.about_video_thumb1}"> -->
+			<video class="com_video_img" id="video1" src="{$site.about_video1}"></video>
+			<!-- <img class="com_video_start playvideo" src="/static/images/company/com_start.png" data-url="{$site.about_video1}"> -->
+			<img class="com_video_start playvideo" id="start1" src="/static/images/company/com_start.png">
+			<img class="com_video_start" id="pause1" src="/static/images/company/com_stop.png" style="display: none;">
 		</div>
 		<div class="com_text com_intor">
 			<img class="w100" src="/static/images/company/com_text.png">
@@ -32,9 +34,10 @@
 		<div class="com_pro com_intor">
 			<img class="com_video w100" src="/static/images/company/com_pro.png">
 			<!-- <img class="com_pro_img" src="{$site.about_video_thumb2}"> -->
-			<video class="com_video_img" id="video1" src="{$site.about_video1}"></video>
+			<video class="com_video_img2" id="video2" src="{$site.about_video1}"></video>
 			<!-- <img class="com_video_start playvideo" src="/static/images/company/com_start.png" data-url="{$site.about_video1}"> -->
-			<img class="com_video_start playvideo" src="/static/images/company/com_start.png" onclick="playPause()">
+			<img class="com_video_start playvideo" id="start2" src="/static/images/company/com_start.png">
+			<img class="com_video_start2" id="pause2" src="/static/images/company/com_stop.png" style="display: none;">
 		</div>
 		<div class="com_team ac">
 			<img class="" src="/static/images/company/com_team.png" style="width: 40%;"> 
@@ -92,7 +95,7 @@
 	<!-- 下方广告 -->
 	{include file="common/footer"}
 <script type="text/javascript" src="/static/layer/layer.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	//弹出一个页面层
  	$('.playvideo').on('click', function(){
 		var videoUrl = $(this).attr('data-url');
@@ -108,15 +111,41 @@
 			content: html,
 		});	
  	});
-</script>
-<script type="text/javascript">
-var myVideo=document.getElementById("video1");
-	function playPause(){ 
-		if (myVideo.paused) 
-			myVideo.play(); 
-		else 
-		 	myVideo.pause(); 
-	} 
-</script> 
+</script> -->
+	<script type="text/javascript">
+		window.onload=function(){
+			var oStart1 = document.getElementById('start1');
+			var oStart2 = document.getElementById('start2');
+			var oPause1 = document.getElementById('pause1');
+			var oPause2 = document.getElementById('pause2');
+			var oVideo1 = document.getElementById('video1');
+			var oVideo2 = document.getElementById('video2');
+			// 开始函数
+			oStart1.onclick=function(){
+				oVideo.play();
+				oStart.style.display= "none";
+				oPause.style.display= "inline-block";
+			}
+			// 暂停函数
+			oPause1.onclick=function(){
+				oVideo.pause();
+				oStart.style.display= "inline-block";
+				oPause.style.display= "none";
+			}
+
+			// 开始函数
+			oStart2.onclick=function(){
+				oVideo.play();
+				oStart.style.display= "none";
+				oPause.style.display= "inline-block";
+			}
+			// 暂停函数
+			oPause2.onclick=function(){
+				oVideo.pause();
+				oStart.style.display= "inline-block";
+				oPause.style.display= "none";
+			}
+		}
+	</script>
 </body>
 </html>
