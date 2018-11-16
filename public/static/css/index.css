@@ -47,9 +47,23 @@
     color: #fff;
 }
 
-.index_music {position: relative;}
+/*.index_music {position: relative;}
 .index_music .music_top { position: absolute; font-size: 36px;}
 .index_music .music_top a {color: #fff}
 .index_music .top1{top:260px; left: 40px;}
 .index_music .top2{top:620px; left: 40px;}
-.index_music .offset { font-size: 48px; }
+.index_music .offset { font-size: 48px; }*/
+
+.index_music .music_top a{
+    color: #fff;
+    position: absolute;
+    right: 30%;
+}
+
+.index_music .top1{
+    top: 44%;
+}
+
+.index_music .top2{
+    top: 72%;
+}
