@@ -19,14 +19,17 @@
 		<div class="music_title ac">音乐课堂</div>
 		<div class="music_intor">
 			<img class="music_video w100" src="/static/images/music/music_video.png">
-			<img class="music_video_img" src="{$info.thumbimage}">
-			<img class="music_video_start playvideo" src="/static/images/company/com_start.png" data-url="{$info.file}">
+			<!-- <img class="music_video_img" src="{$info.thumbimage}"> -->
+			<!-- <img class="music_video_start playvideo" id="start1" src="/static/images/company/com_start.png" data-url="{$info.file}"> -->
+			<video class="music_video_img" id="video1" src="{$info.file}"></video>
+			<img class="music_video_start playvideo" id="start1" src="/static/images/company/com_start.png">
+			<img class="music_video_start" id="pause1" src="/static/images/company/com_stop.png" style="display: none;">
 		</div>
 	</div>
 	<!-- 下方广告 -->
 	{include file="common/footer"}
 <script type="text/javascript" src="/static/layer/layer.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	//弹出一个页面层
  	$('.playvideo').on('click', function(){
 		var videoUrl = $(this).attr('data-url');
@@ -42,6 +45,25 @@
 			content: html,
 		});	
  	});
+</script> -->
+<script type="text/javascript">
+	window.onload=function(){
+		var oStart1 = document.getElementById('start1');
+		var oPause1 = document.getElementById('pause1');
+		var oVideo1 = document.getElementById('video1');
+		// 开始函数
+		oStart1.onclick=function(){
+			oVideo1.play();
+			oStart1.style.display= "none";
+			oPause1.style.display= "inline-block";
+		}
+		// 暂停函数
+		oPause1.onclick=function(){
+			oVideo1.pause();
+			oStart1.style.display= "inline-block";
+			oPause1.style.display= "none";
+		}
+	}
 </script>
 </body>
 </html>
