@@ -8,7 +8,7 @@
 }
 /*中间按钮*/
 .index_all{
-    width: 67%;
+    width: 65%;
     margin: 0 auto;
     padding: 55px 65px 40px 65px;
 	background: url(../images/index/index_border.png) no-repeat;
@@ -31,39 +31,125 @@
 .my100{
 	width: 100%;
 }
-
-/*youce小时间*/
-.index_date{
-	width: 16%;
-	padding: 35px 0;
-	background-image: url(../images/index/index_date.png);
-	background-repeat:  no-repeat;
-	background-size: 100% 100%;
+.btn_r{
+	position: relative;
+}
+.btn_r_a{
 	position: absolute;
-    top: 20.5%;
-    right: 0;
-    font-size: 46px;
+	top: 13%;
+    right: 35%;
+}
+.btn_r_a li{
+	padding: 85% 0;
+}
+.btn_r_a li a{
+	color: #fff;
+	font-size: 85px;
+}
+@media screen and (max-width: 1930px) {
+	.btn_r_a li a {
+		font-size: 80px;
+	}
+}
+@media screen and (max-width: 1750px) {
+	.btn_r_a li a {
+		font-size: 75px;
+	}
+}
+@media screen and (max-width: 1650px) {
+	.btn_r_a li a {
+		font-size: 70px;
+	}
+}
+@media screen and (max-width: 1550px) {
+	.btn_r_a li a {
+		font-size: 65px;
+	}
+}
+@media screen and (max-width: 1450px) {
+	.btn_r_a li a {
+		font-size: 60px;
+	}
+}
+@media screen and (max-width: 1350px) {
+	.btn_r_a li a {
+		font-size: 55px;
+	}
+}
+@media screen and (max-width: 1250px) {
+	.btn_r_a li a {
+		font-size: 50px;
+	}
+}
+/*右侧小时间*/
+.index_date{
+	/*width: 17%;
+	padding:35px 10px 35px 0px;*/
+	/*background-image: url(../images/index/index_date.png);
+	background-repeat:  no-repeat;
+	background-size: 100% 100%;*/
+	width: 14%;
+	position: absolute;
+    top: 21.5%;
+    right: 1%;
+    font-size: 42px;
     /*color: #11494c;*/
     color: #fff;
 }
 
-/*.index_music {position: relative;}
-.index_music .music_top { position: absolute; font-size: 36px;}
-.index_music .music_top a {color: #fff}
-.index_music .top1{top:260px; left: 40px;}
-.index_music .top2{top:620px; left: 40px;}
-.index_music .offset { font-size: 48px; }*/
+/*11.26日改*/
 
-.index_music .music_top a{
-    color: #fff;
-    position: absolute;
-    right: 30%;
+.pr{
+	position: relative;
 }
 
-.index_music .top1 a{
-    top: 44%;
+.dib{
+	width: 48%;
+	margin-top: 20px!important;
+}
+.index_imgy{
+	position: absolute;
+	top:0;
+	width: 94%;
 }
 
-.index_music .top2 a{
-    top: 72%;
+.dib .index_imgy{
+	width: 90%;
 }
+.index_bordery{
+	width: 100%
+}
+
+/*小时间改*/
+.index_date_imgy{
+	width: 94%;
+	position: absolute;
+	right: 20px;
+	top: 0;
+}
+
+#index_date{
+	position: absolute;
+	right: 24%;
+	top: 24%;
+	z-index: 9
+}
+
+/*嘻哈榜 改*/
+.index_music{
+	position: absolute;
+	/*top: 20%;*/
+	left: 18%;
+	font-size: 60px;
+	cursor: pointer;
+}
+.index_music_p{
+	margin-bottom: 10px;
+}
+.index_music1{
+	top: 30%;
+}
+.index_music2{
+	top: 77%;
+}
+

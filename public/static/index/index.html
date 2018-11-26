@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<!-- <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 </head>
@@ -15,23 +15,57 @@
 	<div class="index_bg" id="divbanner">
 		<div class="index_all">
 			<div class="btn_l my50">
-				<div class="mb">
-					<a href="news.html"><img class="my100" src="../images/index/new.png"></a>
+				<div class="pr mb">
+					<a href="news.html">
+						<img class="index_bordery" src="../images/index/new.png">
+						<img class="index_imgy" src="../images/index/new_1.png">
+					</a>
 				</div>
-				<div class="mb">
-					<a href="product.html"><img class="my100" src="../images/index/girl.png"></a>
+				<div class="pr mb">
+					<a href="product.html">
+						<img class="index_bordery" src="../images/index/girl.png">
+						<img class="index_imgy" style="height: 93%;" src="../images/index/girl_1.png">
+					</a>
 				</div>
 				<div class="btn_l_b mb">
-					<a class="dib" href="company.html"><img class="my100" src="../images/index/gongsi.png"></a>
-					<a class="dib" href="join.html"><img class="my100" src="../images/index/hezuo.png"></a>
+					<a class="pr dib" href="company.html">
+						<img class="index_bordery" src="../images/index/gongsi.png">
+						<img class="index_imgy" src="../images/index/gongsi_1.png">
+					</a>
+					<a class="pr dib" href="join.html">
+						<img class="index_bordery" src="../images/index/hezuo.png">
+						<img class="index_imgy" src="../images/index/hezuo_1.png">
+					</a>
 				</div>
 			</div>
-			<div class="btn_l my50">
-				<a href="music.html"><img class="my100" src="../images/index/xiha.png"></a>
+			<div class="btn_l pr my50">
+				<a href="music.html">
+					<img class="index_bordery" src="../images/index/xiha.png">
+					<img class="index_imgy" style="height: 97%;" src="../images/index/xiha_1.png">
+				</a>
+				<div class="index_music index_music1">
+	            	<p class="index_music_p">天使的承诺</p>
+	            	<audio class="index_music_audio" style="display: none;" src="song.mp3" controls="controls" loop="loop" autoplay="autoplay"></audio>
+				</div>
+				<div class="index_music index_music2">
+	                <p class="index_music_p">神秘世界</p>
+	                <audio class="index_music_audio" style="display: none;" src="song.mp3" controls="controls" loop="loop" autoplay="autoplay"></audio>
+				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(".index_music_p").click(function () {
+				$(this).siblings().toggle()
+			})
+		</script>
 		<!-- 右侧小时间 -->
-		<div class="index_date ac" id="index_date"></div>
+		<div class="index_date">
+			<div class="pr">
+				<span id="index_date"></span>
+				<img class="index_bordery" src="../images/index/index_date.png">
+				<img class="index_date_imgy" src="../images/index/index_date_1.png">
+			</div>
+		</div>
 	</div>
 	<!-- 下方广告 -->
 	<div class="footer_bg"></div>
@@ -54,20 +88,19 @@
 			var date = myDate.getDate();
 			$('#index_date').text(yue + "月" + date + "日");
 		})
-
 	</script>
 	<script type="text/javascript">
-		var currentIndex = 0;
-		function changeBg() { 
-			var bgImgs = ["../images/index/index_bg.png","../images/index/index_bg2.png"]; 
-			if (currentIndex >= bgImgs.length){
-				currentIndex = 0;
-			}
-				
-				$("#divbanner").css("background-image","url(" + bgImgs[currentIndex] + ")");
-				currentIndex += 1;   
-		}
-		setInterval("changeBg()", 1000); 
-	</script>
+        
+        function changeBg() { 
+        	var myBorder = $(".index_bordery")
+        	if (myBorder.css("visibility") == "hidden"){
+        		$(".index_bordery").css("visibility","inherit")
+        	}else{
+        		$(".index_bordery").css("visibility","hidden")
+        	}
+        	
+        }
+        setInterval("changeBg()", 500);
+    </script>
 </body>
 </html>
