@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{$site.name}</title>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="static/css/common.css">
+    <!-- <script type="text/javascript" src="static/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 中间按钮 -->
+    <div class="index_bg" id="divbanner">
+        <div class="index_all">
+            <div class="btn_l my50">
+                <div class="mb">
+                    <a href="{:url('index/news/index')}"><img class="my100 divbanner" src="static/images/index/new.png"></a>
+                </div>
+                <div class="mb">
+                    <a href="{:url('index/music/index')}"><img class="my100 divbanner" src="static/images/index/girl.png"></a>
+                </div>
+                <div class="btn_l_b mb">
+                    <a class="dib my100" href="{:url('index/about/index')}"><img class="my100 divbanner" src="static/images/index/gongsi.png"></a>
+                    <a class="dib my100" href="{:url('index/join/index')}"><img class="my100 divbanner" src="static/images/index/hezuo.png"></a>
+                </div>
+            </div>
+            <div class="btn_l my50 index_music">
+                <a href="{:url('index/music/index')}"><img class="my100 divbanner" src="static/images/index/xiha.png"></a>
+                {foreach name="$audiolist" item="item" key="k"}
+                <p class="music_top top{$k+1}"><a target="_blank" href="{$item.url}">{$item.title}</a></p>
+                {/foreach}
+            </div>
+        </div>
+        <!-- 右侧小时间 -->
+        <div class="index_date ac" id="index_date"></div>
+    </div>
+    <!-- 下方广告 -->
+    {include file="common/footer"}
+    <script type="text/javascript">
+        $(function(){
+            var myDate = new Date;
+            var yue = myDate.getMonth()+1;
+            var date = myDate.getDate();
+            $('#index_date').text(yue + "月" + date + "日");
+        })
+
+    </script>
+    <script type="text/javascript">
+        var imageIndex=1
+        function changeBg() { 
+            var imgs = [
+                ["static/images/index/new.png","static/images/index/new_1.png"],
+                ["static/images/index/girl.png","static/images/index/girl_1.png"],
+                ["static/images/index/gongsi.png","static/images/index/gongsi_1.png"],
+                ["static/images/index/hezuo.png","static/images/index/hezuo_1.png"],
+                ["static/images/index/xiha.png","static/images/index/xiha_1.png"]
+            ];
+            var bgImgs = ["static/images/index/index_date.png","static/images/index/index_date_1.png"];
+            var bgSize = ["46px","54px"];
+
+            let $images= $(".divbanner")
+            $images.each(function(index,el){
+                //console.log(imgs[index][imageIndex])
+                this.src=imgs[index][imageIndex]
+            })
+
+            let bgIamges = $("#index_date")
+            bgIamges.css("background-image" , "url(" + bgImgs[imageIndex] + ")")
+            bgIamges.css("fontSize" , bgSize[imageIndex])
+
+            let hh = $(".index_music a")
+            hh.css("fontSize" , bgSize[imageIndex])
+
+            if(imageIndex==0){
+                imageIndex=1
+            }else{
+                imageIndex=0
+            }
+
+            // 字体变化
+            $('.music_top').each(function(index){
+                if($(this).hasClass('offset')){
+                    $(this).removeClass('offset');
+                } else {
+                    $(this).addClass('offset');
+                }
+            })
+        }
+        setInterval("changeBg()", 500);
+        
+    </script>
+</body>
+</html>

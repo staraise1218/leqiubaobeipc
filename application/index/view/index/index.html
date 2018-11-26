@@ -1,95 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{$site.name}</title>
-    <meta charset="utf-8">
-    <!-- <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="static/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="static/css/index.css">
-    <link rel="stylesheet" type="text/css" href="static/css/common.css">
-    <!-- <script type="text/javascript" src="static/js/bootstrap.min.js"></script> -->
-    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+	<title>乐球宝贝官网</title>
+	<meta charset="utf-8">
+	<!-- <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<!-- <script type="text/javascript" src="/static/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
 </head>
 <body>
-    <!-- 中间按钮 -->
-    <div class="index_bg" id="divbanner">
-        <div class="index_all">
-            <div class="btn_l my50">
-                <div class="mb">
-                    <a href="{:url('index/news/index')}"><img class="my100 divbanner" src="static/images/index/new.png"></a>
-                </div>
-                <div class="mb">
-                    <a href="{:url('index/music/index')}"><img class="my100 divbanner" src="static/images/index/girl.png"></a>
-                </div>
-                <div class="btn_l_b mb">
-                    <a class="dib my100" href="{:url('index/about/index')}"><img class="my100 divbanner" src="static/images/index/gongsi.png"></a>
-                    <a class="dib my100" href="{:url('index/join/index')}"><img class="my100 divbanner" src="static/images/index/hezuo.png"></a>
-                </div>
-            </div>
-            <div class="btn_l my50 index_music">
-                <a href="{:url('index/music/index')}"><img class="my100 divbanner" src="static/images/index/xiha.png"></a>
-                {foreach name="$audiolist" item="item" key="k"}
-                <p class="music_top top{$k+1}"><a target="_blank" href="{$item.url}">{$item.title}</a></p>
-                {/foreach}
-            </div>
-        </div>
-        <!-- 右侧小时间 -->
-        <div class="index_date ac" id="index_date"></div>
-    </div>
-    <!-- 下方广告 -->
-    {include file="common/footer"}
-    <script type="text/javascript">
-        $(function(){
-            var myDate = new Date;
-            var yue = myDate.getMonth()+1;
-            var date = myDate.getDate();
-            $('#index_date').text(yue + "月" + date + "日");
-        })
-
-    </script>
-    <script type="text/javascript">
-        var imageIndex=1
+	<!-- 中间按钮 -->
+	<div class="index_bg" id="divbanner">
+		<div class="index_all">
+			<div class="btn_l my50">
+				<div class="pr mb">
+					<a href="news.html">
+						<img class="index_bordery" src="/static/images/index/new.png">
+						<img class="index_imgy" src="/static/images/index/new_1.png">
+					</a>
+				</div>
+				<div class="pr mb">
+					<a href="product.html">
+						<img class="index_bordery" src="/static/images/index/girl.png">
+						<img class="index_imgy" style="height: 93%;" src="/static/images/index/girl_1.png">
+					</a>
+				</div>
+				<div class="btn_l_b mb">
+					<a class="pr dib" href="company.html">
+						<img class="index_bordery" src="/static/images/index/gongsi.png">
+						<img class="index_imgy" src="/static/images/index/gongsi_1.png">
+					</a>
+					<a class="pr dib" href="join.html">
+						<img class="index_bordery" src="/static/images/index/hezuo.png">
+						<img class="index_imgy" src="/static/images/index/hezuo_1.png">
+					</a>
+				</div>
+			</div>
+			<div class="btn_l pr my50">
+				<a href="music.html">
+					<img class="index_bordery" src="/static/images/index/xiha.png">
+					<img class="index_imgy" style="height: 97%;" src="/static/images/index/xiha_1.png">
+				</a>
+				<div class="index_music index_music1">
+	            	<p class="index_music_p">天使的承诺</p>
+	            	<audio class="index_music_audio" style="display: none;" src="song.mp3" controls="controls" loop="loop" autoplay="autoplay"></audio>
+				</div>
+				<div class="index_music index_music2">
+	                <p class="index_music_p">神秘世界</p>
+	                <audio class="index_music_audio" style="display: none;" src="song.mp3" controls="controls" loop="loop" autoplay="autoplay"></audio>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".index_music_p").click(function () {
+				$(this).siblings().toggle()
+			})
+		</script>
+		<!-- 右侧小时间 -->
+		<div class="index_date">
+			<div class="pr">
+				<span id="index_date"></span>
+				<img class="index_bordery" src="/static/images/index/index_date.png">
+				<img class="index_date_imgy" src="/static/images/index/index_date_1.png">
+			</div>
+		</div>
+	</div>
+	<!-- 下方广告 -->
+	{include file="common/footer"}
+	<script type="text/javascript">
+		$(function(){
+			var myDate = new Date;
+			var yue = myDate.getMonth()+1;
+			var date = myDate.getDate();
+			$('#index_date').text(yue + "月" + date + "日");
+		})
+	</script>
+	<script type="text/javascript">
+        
         function changeBg() { 
-            var imgs = [
-                ["static/images/index/new.png","static/images/index/new_1.png"],
-                ["static/images/index/girl.png","static/images/index/girl_1.png"],
-                ["static/images/index/gongsi.png","static/images/index/gongsi_1.png"],
-                ["static/images/index/hezuo.png","static/images/index/hezuo_1.png"],
-                ["static/images/index/xiha.png","static/images/index/xiha_1.png"]
-            ];
-            var bgImgs = ["static/images/index/index_date.png","static/images/index/index_date_1.png"];
-            var bgSize = ["46px","54px"];
-
-            let $images= $(".divbanner")
-            $images.each(function(index,el){
-                //console.log(imgs[index][imageIndex])
-                this.src=imgs[index][imageIndex]
-            })
-
-            let bgIamges = $("#index_date")
-            bgIamges.css("background-image" , "url(" + bgImgs[imageIndex] + ")")
-            bgIamges.css("fontSize" , bgSize[imageIndex])
-
-            let hh = $(".index_music a")
-            hh.css("fontSize" , bgSize[imageIndex])
-
-            if(imageIndex==0){
-                imageIndex=1
-            }else{
-                imageIndex=0
-            }
-
-            // 字体变化
-            $('.music_top').each(function(index){
-                if($(this).hasClass('offset')){
-                    $(this).removeClass('offset');
-                } else {
-                    $(this).addClass('offset');
-                }
-            })
+        	var myBorder = $(".index_bordery")
+        	if (myBorder.css("visibility") == "hidden"){
+        		$(".index_bordery").css("visibility","inherit")
+        	}else{
+        		$(".index_bordery").css("visibility","hidden")
+        	}
+        	
         }
         setInterval("changeBg()", 500);
-        
     </script>
 </body>
 </html>
