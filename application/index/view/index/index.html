@@ -53,11 +53,6 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript">
-			$(".index_music_p").click(function () {
-				$(this).siblings().toggle()
-			})
-		</script>
 		<!-- 右侧小时间 -->
 		<div class="index_date">
 			<div class="pr">
@@ -90,5 +85,11 @@
         }
         setInterval("changeBg()", 500);
     </script>
+    <script type="text/javascript">
+		$(".index_music_p").click(function () {
+			$(".index_music_audio").hide()
+			$(this).siblings(".index_music_audio").show()
+		})
+	</script>
 </body>
 </html>
