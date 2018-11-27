@@ -43,14 +43,12 @@
 					<img class="index_bordery" src="/static/images/index/xiha.png">
 					<img class="index_imgy" style="height: 97%;" src="/static/images/index/xiha_1.png">
 				</a>
-				<div class="index_music index_music1">
-	            	<p class="index_music_p">天使的承诺</p>
-	            	<audio class="index_music_audio" style="display: none;" src="song.mp3" controls="controls" loop="loop" autoplay="autoplay"></audio>
+				{foreach name="$audiolist" item="item" key="k"}
+				<div class="index_music index_music{$k+1}">
+	            	<p class="index_music_p">{$item.title}</p>
+	            	<audio class="index_music_audio" style="display: none;" src="{$item.audiofile}" controls="controls" loop="loop" autoplay="autoplay"></audio>
 				</div>
-				<div class="index_music index_music2">
-	                <p class="index_music_p">神秘世界</p>
-	                <audio class="index_music_audio" style="display: none;" src="song.mp3" controls="controls" loop="loop" autoplay="autoplay"></audio>
-				</div>
+				{/foreach}
 			</div>
 		</div>
 		<!-- 右侧小时间 -->
