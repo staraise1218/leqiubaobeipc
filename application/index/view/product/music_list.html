@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>产品展示-音乐列表</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/musicList.css">
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+</head>
+<body>
+	<!-- 顶部导航菜单 -->
+	{include file="common/header"}
+	<!-- 商品展示 -->
+	<div class="musicList_bg">
+		<div class="musicList_top">
+			<div class="top_l"><img src="/static/images/musicList/musicList_img.png"></div>
+			<div class="top_r">
+				<div class="top_r_title">弗瑞思儿童欢乐之家</div>
+				<div class="top_r_btn">
+					<button><img src="/static/images/musicList/musicList_start.png">播放</button>
+					<button><img src="/static/images/musicList/musicList_down.png">下载</button>
+				</div>
+				<div class="top_r_intro">
+					<div class="top_r_name">播放</div>
+					<ul class="top_r_ul">
+						{if !empty($album['tag'])}
+						{foreach name="$album.tag" item="item"}
+						<li>{$item}</li>
+						{/foreach}
+						{/if}
+					</ul>
+				</div>
+				<div class="top_r_intro" style="margin-bottom: 25px;">
+					<div class="top_r_name">介绍</div>
+					<div class="top_r_content"></div>
+				</div>
+
+				<p class="top_r_word">{$album.description}</p>
+				<!-- <div class="top_r_zhan ar">展开 <img src="/static/images/musicList/shang.png"></div> -->
+			</div>
+		</div>
+
+		<div class="musicList_bottom">
+			<div class="bottom_title">音频列表</div>
+			<div class="musicList_bottom_bor">
+				<table class="bottom_table">
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+							<th>歌曲标题</th>
+							<th>时长</th>
+							<th>歌手</th>
+							<!-- <th>专辑</th> -->
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="audio" item="item"}
+						<tr>
+							<td>1</td>
+							<td class="bottom_table_btn">
+								<button><img src="/static/images/musicList/musicList_start.png"></button>　
+								<button><a href="{:url('index/product/download', array('id'=>$item.id))}"><img src="/static/images/musicList/musicList_down.png"></a></button>
+							</td>
+							<td>{$item.title}</td>
+							<td>{$item.timelong}</td>
+							<td>{$item.band}</td>
+							<!-- <td>{$album.title}</td> -->
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- 下方广告 -->
+	{include file="common/footer"}
+
+</body>
+</html>

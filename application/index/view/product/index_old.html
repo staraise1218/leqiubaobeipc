@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>产品展示</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/product.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/common.css">
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/static/css/swiper.min.css">
+	<script src="/static/js/swiper.min.js"></script>
+</head>
+<body>
+	<!-- 顶部导航菜单 -->
+	{include file="common/header"}
+	<!-- 顶部轮播图 -->
+	{include file="common/banner"} 
+	<!-- 商品展示 -->
+	<div class="pro_bg">
+		<div class="pro">
+			<!-- 核心商品展示 -->
+			<div class="pro_l">
+				<img src="/static/images/product/pro_core.png">
+				<div class="pro_show ac">
+					<p class="pro_show_title">乐球宝贝公司介绍</p>
+					{if condition="!empty($productVideo0.videofile)"}
+					<!-- <img class="pro_show_start playvideo" src="/static/images/product/start.png" data-url="{$productVideo0.videofile}"> -->
+					<img class="pro_show_start playvideo" id="start1" src="/static/images/company/com_start.png">
+					<img class="pro_show_start" id="pause1" src="/static/images/company/com_stop.png" style="display: none;">
+					{/if}
+					<!-- <img class="pro_show_img" src="{$productVideo0.thumbimage}"> -->
+					<video class="pro_show_img" id="video1" src="{$productVideo0.videofile}"></video>
+					<img class="pro_show_bor" src="/static/images/product/pro_img.png">
+					<p class="pro_show_p al">{$productVideo0.description}</p>
+				</div>
+
+				<div class="pro_intro pro_show ac">
+					<p class="pro_show_title">公司产品介绍</p>
+					{if condition="!empty($productVideo1.videofile)"}
+					<!-- <img class="pro_intro_start playvideo" src="/static/images/product/start.png" data-url="{$productVideo1.videofile}"> -->
+					<img class="pro_intro_start playvideo" id="start2" src="/static/images/company/com_start.png">
+					<img class="pro_intro_start" id="pause2" src="/static/images/company/com_stop.png" style="display: none;">
+					{/if}
+					<!-- <img class="pro_intro_img" src="{$productVideo1.thumbimage}"> -->
+					<video class="pro_intro_img" id="video2" src="{$productVideo1.videofile}"></video>
+					<img class="pro_intro_bor pro_show_bor" src="/static/images/product/pro_intro.png">
+					<p class="pro_intro_p pro_show_p al">{$productVideo1.description}</p>
+				</div>
+				<img class="pro_music" src="/static/images/product/pro_music.png">
+			</div>
+			<!-- 排行榜 -->
+			<div class="pro_r">
+				<img src="/static/images/product/ranking.png">
+				<ul class="pro_r_ul">
+					{foreach name="audio" item="item" key="k"}
+					<li>
+						<a href="{$item.url}" target="_blank">
+							<img src="/static/images/product/top{$k+1}.png">
+							<p>
+								<span>{$item.title}</span>
+								<span>{$item.band}</span>
+							</p>
+						</a>
+					</li>
+					{/foreach}
+				</ul>
+			</div>
+		</div>
+
+		<!-- 合作公司 -->
+		<div class="pro_com">
+			<div class="jiantou prev" role="button" aria-label="Next slide" aria-disabled="false"><img src="/static/images/product/pro_l.png"></div>
+			<div class="scroll_content swiper-container swiper-container-horizontal">
+				<ul class="pro_bottom swiper-wrapper" style="height: auto;">
+					{foreach name="audio" item="item" key="k"}
+					<li class="swiper-slide swiper-slide-active">
+						<img class="pro_bottom_bor" src="/static/images/product/pro_2.png">
+						<a href="{$item.url}"><img class="pro_bottom_img" src="{$item.thumbimage}"></a>
+						<!-- <img class="pro_bottom_start" src="/static/images/product/start.png"> -->
+					</li>
+					{/foreach}
+				</ul>
+			</div>
+			<div class="jiantou next" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"><img src="/static/images/product/pro_r.png"></div>
+		</div>
+	</div>
+	<!-- 下方广告 -->
+	{include file="common/footer"}
+<script type="text/javascript" src="/static/layer/layer.js"></script>
+<script type="text/javascript">
+	//弹出一个页面层
+ 	// $('.playvideo').on('click', function(){
+		// var videoUrl = $(this).attr('data-url');
+
+		// var html = '<video id="video" src="'+videoUrl+'" width="600" height="360" controls preload autoplay></video>';
+		// layer.open({
+		// 	type: 1,
+		// 	skin: 'layui-layer-rim', //加上边框
+		// 	area: ['620px', '400px'], //宽高
+		// 	title: false,
+		// 	closeBtn: 0,
+  // 			shadeClose: true,
+		// 	content: html,
+		// });	
+ 	// });
+
+ 	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 3,
+		spaceBetween: 0,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.next',
+			prevEl: '.prev',
+		},
+	});
+</script>
+<script type="text/javascript">
+	window.onload=function(){
+		var oStart1 = document.getElementById('start1');
+		var oStart2 = document.getElementById('start2');
+		var oPause1 = document.getElementById('pause1');
+		var oPause2 = document.getElementById('pause2');
+		var oVideo1 = document.getElementById('video1');
+		var oVideo2 = document.getElementById('video2');
+		// 开始函数
+		oStart1.onclick=function(){
+			oVideo1.play();
+			oStart1.style.display= "none";
+			oPause1.style.display= "inline-block";
+		}
+		// 暂停函数
+		oPause1.onclick=function(){
+			oVideo1.pause();
+			oStart1.style.display= "inline-block";
+			oPause1.style.display= "none";
+		}
+
+		// 开始函数
+		oStart2.onclick=function(){
+			oVideo2.play();
+			oStart2.style.display= "none";
+			oPause2.style.display= "inline-block";
+		}
+		// 暂停函数
+		oPause2.onclick=function(){
+			oVideo2.pause();
+			oStart2.style.display= "inline-block";
+			oPause2.style.display= "none";
+		}
+	}
+</script>
+</body>
+</html>

@@ -2,11 +2,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
     var Controller = {
         index: function () {
+            var album_id = $('input[name=album_id]').val();
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'product/audio/index',
-                    add_url: 'product/audio/add',
+                    index_url: 'product/audio/index?album_id='+album_id,
+                    add_url: 'product/audio/add?album_id='+album_id,
                     edit_url: 'product/audio/edit',
                     del_url: 'product/audio/del',
                     multi_url: 'product/audio/multi',

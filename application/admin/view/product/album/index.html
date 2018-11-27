@@ -1,18 +1,16 @@
 <div class="panel panel-default panel-intro">
     {:build_heading()}
-    
+
     <div class="panel-body">
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="one">
                 <div class="widget-body no-padding">
                     <div id="toolbar" class="toolbar">
-                        <input type="hidden" name="album_id" value="{$album_id}">
-                        <a class="btn" href="javascript:window.history.back(-1)"><i class="fa fa-arrow-circle-left" style="font-size: 30px;"></i></a>
                         <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>
-                        <a href="javascript:;" class="btn btn-success btn-add {:$auth->check('product/audio/add')?'':'hide'}" title="{:__('Add')}" ><i class="fa fa-plus"></i> {:__('Add')}</a>
-                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('product/audio/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>
+                        <a href="javascript:;" class="btn btn-success btn-add {:$auth->check('product/album/add')?'':'hide'}" title="{:__('Add')}" ><i class="fa fa-plus"></i> {:__('Add')}</a>
+                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('product/album/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>
 
-                        <!-- <div class="dropdown btn-group {:$auth->check('product/audio/multi')?'':'hide'}">
+                        <!-- <div class="dropdown btn-group {:$auth->check('product/album/multi')?'':'hide'}">
                             <a class="btn btn-primary btn-more dropdown-toggle btn-disabled disabled" data-toggle="dropdown"><i class="fa fa-cog"></i> {:__('More')}</a>
                             <ul class="dropdown-menu text-left" role="menu">
                                 <li><a class="btn btn-link btn-multi btn-disabled disabled" href="javascript:;" data-params="status=normal"><i class="fa fa-eye"></i> {:__('Set to normal')}</a></li>
@@ -21,8 +19,8 @@
                         </div> -->
                     </div>
                     <table id="table" class="table table-striped table-bordered table-hover table-nowrap"
-                           data-operate-edit="{:$auth->check('product/audio/edit')}" 
-                           data-operate-del="{:$auth->check('product/audio/del')}" 
+                           data-operate-edit="{:$auth->check('product/album/edit')}" 
+                           data-operate-del="{:$auth->check('product/album/del')}" 
                            width="100%">
                     </table>
                 </div>
