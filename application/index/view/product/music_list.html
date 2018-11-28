@@ -8,9 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/common.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/musicList.css">
-	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../js/swiper.min.js"></script>
+	<script src="/static/js/swiper.min.js"></script>
 </head>
 <body>
 	<!-- 顶部导航菜单 -->
@@ -60,17 +60,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						{foreach name="audio" item="item"}
+						{foreach name="audio" item="item" key="k"}
 						<tr>
-							<td>1</td>
+							<td>{$k+1}
+								<audio style="display: none;" src="{$item.audiofile}" controls="controls"></audio>
+							</td>
 							<td class="bottom_table_btn">
-								<button><img src="/static/images/musicList/musicList_start.png"></button>　
+								<button class="play"><img src="/static/images/musicList/musicList_start.png"></button>　
 								<button><a href="{:url('index/product/download', array('id'=>$item.id))}"><img src="/static/images/musicList/musicList_down.png"></a></button>
 							</td>
 							<td>{$item.title}</td>
 							<td>{$item.timelong}</td>
 							<td>{$item.band}</td>
 							<!-- <td>{$album.title}</td> -->
+
 						</tr>
 						{/foreach}
 					</tbody>
@@ -80,6 +83,17 @@
 	</div>
 	<!-- 下方广告 -->
 	{include file="common/footer"}
-
+<script type="text/javascript">
+		$(".play").click(function () {
+			var thisAudio = $(this).parents('tr').find('audio')[0];
+			
+			if(thisAudio.paused){
+				thisAudio.play();
+			} else {
+				thisAudio.pause();
+			}
+			
+		})
+	</script>
 </body>
 </html>

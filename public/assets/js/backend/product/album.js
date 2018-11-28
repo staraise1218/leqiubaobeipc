@@ -6,7 +6,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             Table.api.init({
                 extend: {
                     index_url: 'product/album/index',
-                    add_url: 'product/album/add?',
+                    add_url: 'product/album/add',
                     edit_url: 'product/album/edit',
                     del_url: 'product/album/del',
                     multi_url: 'product/album/multi',

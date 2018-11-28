@@ -45,8 +45,8 @@
 				</a>
 				{foreach name="$audiolist" item="item" key="k"}
 				<div class="index_music index_music{$k+1}">
-	            	<p class="index_music_p">{$item.title}</p>
-	            	<audio class="index_music_audio" style="display: none;" src="{$item.audiofile}" controls="controls" loop="loop" autoplay="autoplay"></audio>
+	            	<p class="index_music_p" audio_url="{$item.audiofile}">{$item.title}</p>
+	            	<audio class="index_music_audio" style="display: none;" src="{$item.audiofile}" controls="controls"></audio>
 				</div>
 				{/foreach}
 			</div>
@@ -85,8 +85,13 @@
     </script>
     <script type="text/javascript">
 		$(".index_music_p").click(function () {
-			$(".index_music_audio").hide()
-			$(this).siblings(".index_music_audio").show()
+			var audio_url = $(this).attr('audio_url');
+			if($(this).siblings('audio')[0].paused){
+				$(this).siblings('audio')[0].play();
+			} else {
+				$(this).siblings('audio')[0].pause();
+			}
+			
 		})
 	</script>
 </body>
