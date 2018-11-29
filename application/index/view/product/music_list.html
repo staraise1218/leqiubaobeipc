@@ -22,7 +22,7 @@
 			<div class="top_r">
 				<div class="top_r_title">弗瑞思儿童欢乐之家</div>
 				<div class="top_r_btn">
-					<button><img src="/static/images/musicList/musicList_start.png">播放</button>
+					<button onclick="playAll()"><img src="/static/images/musicList/musicList_start.png">播放</button>
 					<button onclick="window.location='{:url('index/product/downloadzip', array('id'=>$album.id))}'"><img src="/static/images/musicList/musicList_down.png">下载</button>
 				</div>
 				<div class="top_r_intro">
@@ -84,16 +84,36 @@
 	<!-- 下方广告 -->
 	{include file="common/footer"}
 <script type="text/javascript">
-		$(".play").click(function () {
-			var thisAudio = $(this).parents('tr').find('audio')[0];
+	$(".play").click(function () {
+		var thisAudio = $(this).parents('tr').find('audio')[0];
+		
+		if(thisAudio.paused){
+			thisAudio.play();
+			$(this).find('img').attr('src', '/static/images/musicList/musicList_pause.png');
+		} else {
+			thisAudio.pause();
+			$(this).find('img').attr('src', '/static/images/musicList/musicList_start.png');
+		}
+		
+	})
+
+	function playAll(){
+		var audios = document.getElementsByTagName("audio");
+		audios[0].play();
+		$(audios[0]).parents('tr').find('.play').find('img').attr('src', '/static/images/musicList/musicList_pause.png');
+		for(var i=0; i<audios.length; i++){
+			// console.log("audios "+i+"  SRC:" + audios[i].currentSrc);
 			
-			if(thisAudio.paused){
-				thisAudio.play();
-			} else {
-				thisAudio.pause();
-			}
-			
-		})
-	</script>
+			audios[i].addEventListener('ended', function () {
+
+				$(this).parents('tr').find('.play').find('img').attr('src','/static/images/musicList/musicList_start.png');
+				var nextAudio = $(this).parents('tr').next('tr').find('audio');
+				if(nextAudio[0].tagName == "AUDIO"){
+					nextAudio[0].play();
+				}
+			}, false);
+		}
+	}
+</script>
 </body>
 </html>

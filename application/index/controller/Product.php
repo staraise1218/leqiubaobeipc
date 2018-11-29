@@ -104,7 +104,7 @@ class Product extends Frontend
         if(is_array($audio) && !empty($audio)){
             foreach($audio as $item){
                 $file = ltrim($item['audiofile'], '/');
-                if(!file_exists($file)){  
+                if(!file_exists($file)){
                     exit("无法找到文件".$file); //即使创建，仍有可能失败。。。。  
                 }
                 if(file_exists($file)){

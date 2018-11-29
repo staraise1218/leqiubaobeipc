@@ -53,13 +53,13 @@
 				<ul class="pro_r_ul">
 					{foreach name="audio" item="item" key="k"}
 					<li>
-						<a href="#">
-							<img src="/static/images/product/top{$k+1}.png">
-							<p>
-								<span>{$item.title}</span>
-								<span>{$item.band}</span>
-							</p>
-						</a>
+						<a href="javascript:;">
+						<img src="/static/images/product/top{$k+1}.png">
+						<p class="toplist">
+							<span>{$item.title}</span>
+							<span>{$item.band}</span>
+						</p></a>
+						<audio class="index_music_audio" style="display: none;" src="{$item.audiofile}" controls="controls"></audio>
 					</li>
 					{/foreach}
 				</ul>
@@ -101,7 +101,21 @@
 			oStart2.style.display= "inline-block";
 			oPause2.style.display= "none";
 		}
+
+		
 	}
+
+$(function(){
+	$(".toplist").click(function () {
+		var audioObj = $(this).parents('li').find('audio');
+		if(audioObj[0].paused){
+			audioObj[0].play();
+		} else {
+			audioObj[0].pause();
+		}
+		
+	})
+})
 </script>
 </body>
 </html>
