@@ -45,7 +45,7 @@
 				</a>
 				{foreach name="$audiolist" item="item" key="k"}
 				<div class="index_music index_music{$k+1}">
-	            	<p class="index_music_p" audio_url="{$item.audiofile}">{$item.title}</p>
+	            	<p class="index_music_p" audio_url="{$item.audiofile}">{:mb_substr($item.title, 0, 7)}</p>
 	            	<audio class="index_music_audio" style="display: none;" src="{$item.audiofile}" controls="controls"></audio>
 				</div>
 				{/foreach}
