@@ -22,7 +22,9 @@
 			<div class="top_r">
 				<div class="top_r_title">弗瑞思儿童欢乐之家</div>
 				<div class="top_r_btn">
-					<button onclick="playAll()"><img src="/static/images/musicList/musicList_start.png">播放</button>
+					<button class="playAll" status="off">
+						<img src="/static/images/musicList/musicList_start.png" class="starticon"><img src="/static/images/musicList/musicList_pause.png" class="pauseicon" style="display: none">播放
+					</button>
 					<button onclick="window.location='{:url('index/product/downloadzip', array('id'=>$album.id))}'"><img src="/static/images/musicList/musicList_down.png">下载</button>
 				</div>
 				<div class="top_r_intro">
@@ -97,23 +99,42 @@
 		
 	})
 
-	function playAll(){
+	$('.playAll').click(function(){
+		var status = $(this).attr('status');
+
+
 		var audios = document.getElementsByTagName("audio");
+		if(status == 'on') {
+			for(var i=0; i<audios.length; i++){
+				audios[i].pause();
+				audios[i].currentTime = 0;
+			}
+
+			$(this).find('.starticon').show();
+			$(this).find('.pauseicon').hide();
+			$(this).attr('status', 'off');
+			return false;
+		}
+		// 开启第一个视频
 		audios[0].play();
-		$(audios[0]).parents('tr').find('.play').find('img').attr('src', '/static/images/musicList/musicList_pause.png');
+		$(this).attr('status', 'on');
+		$(this).find('.starticon').hide();
+		$(this).find('.pauseicon').show();
+
+		// $(audios[0]).parents('tr').find('.play').find('img').attr('src', '/static/images/musicList/musicList_pause.png');
 		for(var i=0; i<audios.length; i++){
 			// console.log("audios "+i+"  SRC:" + audios[i].currentSrc);
 			
 			audios[i].addEventListener('ended', function () {
 
-				$(this).parents('tr').find('.play').find('img').attr('src','/static/images/musicList/musicList_start.png');
+				// $(this).parents('tr').find('.play').find('img').attr('src','/static/images/musicList/musicList_start.png');
 				var nextAudio = $(this).parents('tr').next('tr').find('audio');
 				if(nextAudio[0].tagName == "AUDIO"){
 					nextAudio[0].play();
 				}
 			}, false);
 		}
-	}
+	})
 </script>
 </body>
 </html>
