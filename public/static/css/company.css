@@ -115,6 +115,10 @@
   -ms-display: flex;
   -o-display: flex;
   display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
 	-webkit-align-items: center;
   -moz-align-items: center;
   -ms-align-items: center;
@@ -175,8 +179,16 @@
 /*下方合作公司*/
 .com_bottom{
 	width: 100%;
-	padding: 0 14.5% 0 14%;
-	display: flex;
+  padding: 0 14.5% 0 14%;
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
   margin-bottom: 14.7%;
   -webkit-justify-content:space-around;
   -moz-justify-content:space-around;

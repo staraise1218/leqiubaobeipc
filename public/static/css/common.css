@@ -39,6 +39,10 @@ header{
   -ms-display: flex !important;
   -o-display: flex !important;
   display: flex !important;
+  display: -webkit-box !important;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box !important;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox !important;      /* TWEENER - IE 10 */
+  display: -webkit-flex !important;     /* NEW - Chrome */
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
@@ -55,6 +59,10 @@ header{
   -ms-display: flex !important;
   -o-display: flex !important;
   display: flex !important;
+  display: -webkit-box !important;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box !important;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox !important;      /* TWEENER - IE 10 */
+  display: -webkit-flex !important;     /* NEW - Chrome */
   -webkit-justify-content: space-around;
   -moz-justify-content: space-around;
   -ms-justify-content: space-around;
@@ -93,6 +101,10 @@ footer{
   -ms-display: flex;
   -o-display: flex;
   display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
@@ -138,6 +150,10 @@ footer{
   -ms-display: flex;
   -o-display: flex;
   display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
 	width: 25%;
 }
 
