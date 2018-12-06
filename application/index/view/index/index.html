@@ -90,7 +90,8 @@
 	<script type="text/javascript">
         
         function changeBg() { 
-        	var myBorder = $(".index_bordery")
+          var myBorder = $(".index_bordery")
+          console.log(myBorder.css("margin-left"))
         	if (myBorder.css("margin-left") == "100%"){
         		$(".index_bordery").css("margin-left","0")
         	}else{
