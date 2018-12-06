@@ -40,7 +40,10 @@
 
 .music_video_start{
 	position: absolute;
-	top: 47%;
-	left: 45%;
+	/* top: 47%;
+  left: 45%; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 	z-index: 9;
 }
