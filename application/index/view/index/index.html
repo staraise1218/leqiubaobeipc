@@ -8,7 +8,12 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/common.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
 	<!-- <script type="text/javascript" src="/static/js/bootstrap.min.js"></script> -->
-	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <style>
+    .borderyWrap{
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 	<!-- 中间按钮 -->
@@ -16,31 +21,41 @@
 		<div class="index_all">
 			<div class="btn_l my50">
 				<div class="pr mb">
-					<a href="{:url('index/news/index')}">
-						<img class="index_bordery" src="/static/images/index/new.png">
+          <a href="{:url('index/news/index')}">
+            <div class="borderyWrap">
+                <img class="index_bordery" src="/static/images/index/new.png">
+            </div>
 						<img class="index_imgy" src="/static/images/index/new_1.png">
 					</a>
 				</div>
 				<div class="pr mb">
-					<a href="{:url('index/music/index')}">
-						<img class="index_bordery" src="/static/images/index/girl.png">
+          <a href="{:url('index/music/index')}">
+            <div class="borderyWrap">
+                <img class="index_bordery" src="/static/images/index/girl.png">
+            </div>
 						<img class="index_imgy" style="height: 93%;" src="/static/images/index/girl_1.png">
 					</a>
 				</div>
 				<div class="btn_l_b mb">
-					<a class="pr dib" href="{:url('index/about/index')}">
-						<img class="index_bordery" src="/static/images/index/gongsi.png">
+          <a class="pr dib" href="{:url('index/about/index')}">
+            <div class="borderyWrap">
+                <img class="index_bordery" src="/static/images/index/gongsi.png">
+            </div>
 						<img class="index_imgy" src="/static/images/index/gongsi_1.png">
 					</a>
-					<a class="pr dib" href="{:url('index/join/index')}">
-						<img class="index_bordery" src="/static/images/index/hezuo.png">
+          <a class="pr dib" href="{:url('index/join/index')}">
+            <div class="borderyWrap">
+                <img class="index_bordery" src="/static/images/index/hezuo.png">
+            </div>
 						<img class="index_imgy" src="/static/images/index/hezuo_1.png">
 					</a>
 				</div>
 			</div>
 			<div class="btn_l pr my50">
-				<a href="{:url('index/product/index')}">
-					<img class="index_bordery" src="/static/images/index/xiha.png">
+        <a href="{:url('index/product/index')}">
+          <div class="borderyWrap">
+              <img class="index_bordery" src="/static/images/index/xiha.png">
+          </div>
 					<img class="index_imgy" style="height: 97%;" src="/static/images/index/xiha_1.png">
 				</a>
 				{foreach name="$audiolist" item="item" key="k"}
@@ -54,8 +69,10 @@
 		<!-- 右侧小时间 -->
 		<div class="index_date">
 			<div class="pr">
-				<span id="index_date"></span>
-				<img class="index_bordery" src="/static/images/index/index_date.png">
+        <span id="index_date"></span>
+        <div class="borderyWrap">
+            <img class="index_bordery" src="/static/images/index/index_date.png">
+        </div>
 				<img class="index_date_imgy" src="/static/images/index/index_date_1.png">
 			</div>
 		</div>
@@ -74,10 +91,10 @@
         
         function changeBg() { 
         	var myBorder = $(".index_bordery")
-        	if (myBorder.css("display") == "inline-block"){
-        		$(".index_bordery").css("display","none")
+        	if (myBorder.css("margin-left") == "100%"){
+        		$(".index_bordery").css("margin-left","0")
         	}else{
-        		$(".index_bordery").css("display","inline-block")
+        		$(".index_bordery").css("margin-left","100%")
         	}
         	
         }
