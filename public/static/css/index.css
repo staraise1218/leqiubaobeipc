@@ -8,19 +8,31 @@
 }
 /*中间按钮*/
 .index_all{
-    width: 65%;
-    margin: 0 auto;
-    padding: 55px 65px 40px 65px;
+  width: 65%;
+  margin: 0 auto;
+  padding: 55px 65px 40px 65px;
 	background: url(../images/index/index_border.png) no-repeat;
 	background-size: 100% 100%;
 	background-position: center;
-	display: flex;
-	justify-content: space-between;
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+	-webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
 	/*align-items: center;*/
 }
 
 .btn_l_b{
-	display: flex;
+	-webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
 }
 .btn_l_b a{
 	margin: 0 10px;

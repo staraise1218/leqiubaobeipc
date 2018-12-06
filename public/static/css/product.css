@@ -15,8 +15,16 @@
 
 /*左边产品展示*/
 .pro{
-	display: flex;
-	justify-content: space-between;
+	-webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+	-webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
 }
 
 .pro_l{
@@ -170,8 +178,16 @@
 
 /*下方合作公司*/
 .pro_com{
-	display: flex;
+	-webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
 	margin-top: 17.5%;
+	-webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
 	align-items: center;
 	position: relative;
 }

@@ -18,8 +18,16 @@
 
 /*左边产品展示*/
 .pro{
-	display: flex;
-	justify-content: space-between;
+	-webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+	-webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
 	padding: 6% 25% 12% 24.5%;
 }
 
@@ -123,8 +131,20 @@
 }
 
 .pro_music_ul{
-	display: flex;
-	flex-wrap: wrap;
+	-webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
 	align-items: flex-start;
 	padding: 5% 0;
 }

@@ -110,7 +110,15 @@
 }
 
 .com_dia_item{
-	display: flex;
+	-webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+	-webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
 	align-items: center;
 	position: absolute;
 }
@@ -169,8 +177,16 @@
 	width: 100%;
 	padding: 0 14.5% 0 14%;
 	display: flex;
-	margin-bottom: 14.7%;
+  margin-bottom: 14.7%;
+  -webkit-justify-content:space-around;
+  -moz-justify-content:space-around;
+  -ms-justify-content:space-around;
+  -o-justify-content:space-around;
 	justify-content:space-around;
+	-webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
 	align-items: center;
 }
 
