@@ -47,8 +47,14 @@ header{
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
   -o-justify-content: space-between;
-	justify-content: space-between;
-	align-items: center;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  box-align:center;
+  -webkit-box-align:center;
 	background-color: rgba(0,0,0,.3);
 }
 
@@ -114,7 +120,9 @@ footer{
   -moz-align-items: center;
   -ms-align-items: center;
   -o-align-items: center;
-	align-items: center;
+  align-items: center;
+  box-align:center;
+  -webkit-box-align:center;
 }
 
 .footer_bg{

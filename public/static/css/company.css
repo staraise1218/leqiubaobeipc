@@ -123,7 +123,9 @@
   -moz-align-items: center;
   -ms-align-items: center;
   -o-align-items: center;
-	align-items: center;
+  align-items: center;
+  box-align:center;
+  -webkit-box-align:center;
 	position: absolute;
 }
 
@@ -199,7 +201,9 @@
   -moz-align-items: center;
   -ms-align-items: center;
   -o-align-items: center;
-	align-items: center;
+  align-items: center;
+  box-align:center;
+  -webkit-box-align:center;
 }
 
 .com_bottom li{

@@ -43,7 +43,9 @@
   display: -webkit-flex;     /* NEW - Chrome */
 }
 .btn_l_b a{
-	margin: 0 10px;
+  margin: 0 10px;
+  /* safari */
+  display: block;
 }
 .my50{
 	width: 50%;
