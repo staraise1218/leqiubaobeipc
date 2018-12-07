@@ -233,19 +233,19 @@
 	width: 18px;
 	height: 18px;
 	cursor: pointer;
-	background: url(../images/musiclist/musiclist_start.png) no-repeat;
+	background: url(../images/musicList/musiclist_start.png) no-repeat;
 }
 .pro_r_ul i.pauseBtn{
 	display: inline-block;
 	width: 18px;
 	height: 18px;
 	cursor: pointer;
-	background: url(../images/musiclist/musiclist_pause.png) no-repeat;
+	background: url(../images/musicList/musiclist_pause.png) no-repeat;
 }
 .pro_r_ul i.down{
 	display: inline-block;
 	width: 18px;
 	height: 18px;
 	cursor: pointer;
-	background: url(../images/musiclist/musiclist_down.png) no-repeat;
+	background: url(../images/musicList/musiclist_down.png) no-repeat;
 }
