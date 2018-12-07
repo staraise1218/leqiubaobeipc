@@ -56,7 +56,7 @@
 						
 						<img src="/static/images/product/top{$k+1}.png">
 						<p class="toplist">
-							<i class="playBtn"></i>
+							<i class="playBtn" title="播放"></i>
 							<span>{$item.title}</span>
 							<i class="down" onclick="window.location='{:url('index/product/download', array('id'=>$item.id))}'"></i>
 						</p>
@@ -94,8 +94,10 @@ $(function(){
 
 			audioObj[0].play();
 			$(this).addClass('pauseBtn');
+			$(this).attr('title', '暂停');
 		} else {
 			$(this).removeClass('pauseBtn');
+			$(this).attr('title', '播放');
 			audioObj[0].pause();
 		}
 		
