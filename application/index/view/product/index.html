@@ -89,6 +89,7 @@ $(function(){
 					this.pause();
 					this.currentTime = 0;
 					$(this).parents('li').find('i.playBtn').removeClass('pauseBtn');
+					$(this).parents('li').find('i.playBtn').attr('title', '播放');
 				}
 			})
 
