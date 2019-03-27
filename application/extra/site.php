@@ -37,4 +37,5 @@ return array (
   'about_video_thumb2' => '/uploads/20180928/5a0170cc8a7777d418c4451f83dd1f33.jpg',
   'qrcode1' => '/uploads/20181029/e1e9f5a1cd6715abdb0fc5ec7da2a4f5.jpg',
   'qrcode2' => '/uploads/20181029/e1e9f5a1cd6715abdb0fc5ec7da2a4f5.jpg',
+  'version' => '1.0',
 );
