@@ -96,72 +96,40 @@
 	<!-- 下方广告 -->
 	{include file="common/footer"}
 <script type="text/javascript" src="/static/layer/layer.js"></script>
-<!-- <script type="text/javascript">
-	//弹出一个页面层
- 	// $('.playvideo').on('click', function(){
-		// var videoUrl = $(this).attr('data-url');
-
-<<<<<<< HEAD
-		// var html = '<video id="video" src="'+videoUrl+'" width="600" height="360" controls preload autoplay></video>';
-		// layer.open({
-		// 	type: 1,
-		// 	skin: 'layui-layer-rim', //加上边框
-		// 	area: ['620px', '400px'], //宽高
-		// 	title: false,
-		// 	closeBtn: 0,
-  // 			shadeClose: true,
-		// 	content: html,
-		// });	
- 	// });
-</script>
-=======
-		var html = '<video id="video" src="'+videoUrl+'" width="600" height="360" controls preload autoplay></video>';
-		layer.open({
-			type: 1,
-			skin: 'layui-layer-rim', //加上边框
-			area: ['620px', '400px'], //宽高
-			title: false,
-			closeBtn: 0,
-  			shadeClose: true,
-			content: html,
-		});	
- 	});
-</script> -->
-	<script type="text/javascript">
-		window.onload=function(){
-			var oStart1 = document.getElementById('start1');
-			var oStart2 = document.getElementById('start2');
-			var oPause1 = document.getElementById('pause1');
-			var oPause2 = document.getElementById('pause2');
-			var oVideo1 = document.getElementById('video1');
-			var oVideo2 = document.getElementById('video2');
-			// 开始函数
-			oStart1.onclick=function(){
-				oVideo1.play();
-				oStart1.style.display= "none";
-				oPause1.style.display= "inline-block";
-			}
-			// 暂停函数
-			oPause1.onclick=function(){
-				oVideo1.pause();
-				oStart1.style.display= "inline-block";
-				oPause1.style.display= "none";
-			}
-
-			// 开始函数
-			oStart2.onclick=function(){
-				oVideo2.play();
-				oStart2.style.display= "none";
-				oPause2.style.display= "inline-block";
-			}
-			// 暂停函数
-			oPause2.onclick=function(){
-				oVideo2.pause();
-				oStart2.style.display= "inline-block";
-				oPause2.style.display= "none";
-			}
+<script type="text/javascript">
+	window.onload=function(){
+		var oStart1 = document.getElementById('start1');
+		var oStart2 = document.getElementById('start2');
+		var oPause1 = document.getElementById('pause1');
+		var oPause2 = document.getElementById('pause2');
+		var oVideo1 = document.getElementById('video1');
+		var oVideo2 = document.getElementById('video2');
+		// 开始函数
+		oStart1.onclick=function(){
+			oVideo1.play();
+			oStart1.style.display= "none";
+			oPause1.style.display= "inline-block";
 		}
-	</script>
->>>>>>> 477979f72c1782bebbfa38a90e920a02e79462fe
+		// 暂停函数
+		oPause1.onclick=function(){
+			oVideo1.pause();
+			oStart1.style.display= "inline-block";
+			oPause1.style.display= "none";
+		}
+
+		// 开始函数
+		oStart2.onclick=function(){
+			oVideo2.play();
+			oStart2.style.display= "none";
+			oPause2.style.display= "inline-block";
+		}
+		// 暂停函数
+		oPause2.onclick=function(){
+			oVideo2.pause();
+			oStart2.style.display= "inline-block";
+			oPause2.style.display= "none";
+		}
+	}
+</script>
 </body>
 </html>
